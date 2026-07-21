@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nails by Shelby | Mobile Nail Tech Maseno</title>
+  <meta name="description" content="Premium mobile nail technician service in Maseno and surrounding areas. Long-lasting gel nails, custom nail art, stickons, and overlays delivered at your convenience.">
+  
+  <!-- Premium Fonts -->
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Clean Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Luxury Theme Design Tokens */
+    :root {
+      --primary: #c58f97; /* Elegant Rose Gold */
+      --primary-hover: #b37e86;
+      --gold: #dfba6b; /* Muted Luxury Gold */
+      --gold-hover: #cfab5c;
+      --bg-dark: #0a0607; /* Deep Charcoal-Rose Black */
+      --bg-card: #150f11; /* Warm Dark Card */
+      --text-main: #f5f2f3; /* Soft Warm White */
+      --text-muted: #a39699; /* Pale Mauve Grey */
+      --border: rgba(197, 143, 151, 0.15);
+      --border-hover: rgba(223, 186, 107, 0.3);
+      --glow: rgba(197, 143, 151, 0.2);
+      --transition-main: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Ambient Lighting Background Glows */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(197, 143, 151, 0.07) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -20%;
+      right: -20%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(223, 186, 107, 0.05) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Elegant Navigation Bar (Glassmorphic) */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 6, 7, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition-main);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .logo-icon-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(197, 143, 151, 0.3);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: var(--transition-main);
+      font-weight: 500;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: var(--transition-main);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 0.65rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: var(--transition-main);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(197, 143, 151, 0.2);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 143, 151, 0.4);
+    }
+
+    /* Burger Menu Control */
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .burger-line {
+      width: 25px;
+      height: 2px;
+      background-color: var(--text-main);
+      transition: var(--transition-main);
+    }
+
+    /* Mobile Overlay Nav */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 6, 7, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-main);
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu-links {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .mobile-menu-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      transition: var(--transition-main);
+    }
+
+    .mobile-menu-links a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-menu-btn {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Layout Sections */
+    section {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      min-height: 100vh;
+      padding-top: 120px;
+      padding-bottom: 5rem;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Headers Styling */
+    .page-header {
+      text-align: center;
+      padding: 2rem 2rem 3rem;
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .page-title span {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 1.5rem auto 0;
+    }
+
+    /* Hero Section Upgrades */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 40px rgba(197, 143, 151, 0.25);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+      font-style: normal;
+      font-family: 'Tangerine', cursive;
+      font-weight: 700;
+      font-size: 1.7em;
+      text-transform: none;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 1rem 2.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      transition: var(--transition-main);
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(197, 143, 151, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(197, 143, 151, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      padding: 1rem 2.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: var(--transition-main);
+      border-radius: 4px;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(223, 186, 107, 0.25);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 4rem;
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: rgba(197, 143, 151, 0.08);
+      border: 1px solid var(--border);
+      padding: 0.65rem 1.25rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--primary);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .tag1 { top: 22%; left: 7%; animation-delay: 0s; }
+    .tag2 { top: 28%; right: 7%; animation-delay: 1.5s; }
+    .tag3 { bottom: 25%; left: 10%; animation-delay: 3.0s; }
+    .tag4 { bottom: 28%; right: 9%; animation-delay: 4.5s; }
+
+    /* Services Section Upgrades */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 8px;
+      transition: var(--transition-main);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--gold));
+      opacity: 0;
+      transition: var(--transition-main);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-hover);
+      box-shadow: 0 10px 25px rgba(197, 143, 151, 0.1);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .service-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--gold);
+      text-align: right;
+    }
+
+    .service-price span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .service-duration {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .service-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .art-note {
+      background: rgba(223, 186, 107, 0.05);
+      border: 1px solid rgba(223, 186, 107, 0.15);
+      padding: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* Gallery Section Upgrades (Premium Shimmer Grid) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-card {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition-main);
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 30px rgba(197, 143, 151, 0.15);
+    }
+
+    /* Shimmer Placeholder Skeletons */
+    .shimmer-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(21, 15, 17, 0.6), rgba(30, 20, 23, 0.8));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .shimmer-sweep {
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(197, 143, 151, 0.08), transparent);
+      transform: skewX(-25deg);
+      animation: shimmer 2.5s infinite;
+    }
+
+    .placeholder-content {
+      text-align: center;
+      opacity: 0.65;
+      transition: var(--transition-main);
+    }
+
+    .gallery-card:hover .placeholder-content {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
+    .placeholder-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.75rem;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1;
+    }
+
+    .placeholder-text {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .gallery-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .gallery-img.loaded {
+      opacity: 1;
+    }
+
+    .gallery-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(10, 6, 7, 0.9) 0%, rgba(10, 6, 7, 0) 100%);
+      z-index: 3;
+      transform: translateY(100%);
+      transition: var(--transition-main);
+    }
+
+    .gallery-card:hover .gallery-info {
+      transform: translateY(0);
+    }
+
+    .gallery-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text-main);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .gallery-desc {
+      font-size: 0.75rem;
+      color: var(--gold);
+      margin-top: 0.25rem;
+      font-weight: 300;
+    }
+
+    /* Lightbox Modal (For Gallery Images) */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 6, 7, 0.98);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-main);
+    }
+
+    .lightbox-close:hover {
+      color: var(--primary);
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 80%;
+      text-align: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+      margin-top: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    /* Pricing & Live Calculator Section Upgrades */
+    .prices-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+
+    .prices-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .prices-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .price-category {
+      margin-bottom: 2.5rem;
+    }
+
+    .price-cat-title {
+      font-size: 0.8rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(223, 186, 107, 0.2);
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .price-row:last-child {
+      border-bottom: none;
+    }
+
+    .price-item-name {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .price-item-detail {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      font-weight: 300;
+    }
+
+    .price-amount {
+      text-align: right;
+    }
+
+    .price-value {
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .price-duration {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-top: 0.25rem;
+    }
+
+    .per-finger {
+      font-size: 0.65rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    /* Cost Calculator Card */
+    .calculator-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.5rem;
+      position: sticky;
+      top: 120px;
+    }
+
+    .calc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .calc-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .calc-group label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+
+    .calc-select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .calc-select option {
+      background: var(--bg-dark);
+    }
+
+    .addon-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .addon-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .addon-details {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .addon-details span {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--primary);
+    }
+
+    .addon-qty {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1;
+      transition: var(--transition-main);
+    }
+
+    .qty-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .qty-val {
+      font-size: 0.85rem;
+      width: 15px;
+      text-align: center;
+    }
+
+    .calc-total-box {
+      background: rgba(197, 143, 151, 0.05);
+      border: 1px dashed var(--primary);
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calc-total-label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .calc-total-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .calc-book-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 1rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      margin-top: 1.25rem;
+      transition: var(--transition-main);
+    }
+
+    .calc-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 143, 151, 0.3);
+    }
+
+    /* Booking Page Upgrades */
+    .booking-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-method {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      border-radius: 8px;
+      transition: var(--transition-main);
+      cursor: pointer;
+    }
+
+    .contact-method:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(223, 186, 107, 0.1);
+    }
+
+    .cm-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .cm-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .cm-value {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .form-divider {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 3rem 0 2rem;
+      position: relative;
+    }
+
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .form-divider::before { left: 0; }
+    .form-divider::after { right: 0; }
+
+    .booking-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .booking-form {
+        padding: 1.75rem;
+      }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.9rem 1.25rem;
+      font-size: 0.85rem;
+      font-family: 'Montserrat', sans-serif;
+      outline: none;
+      transition: var(--transition-main);
+      border-radius: 4px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 12px rgba(223, 186, 107, 0.1);
+    }
+
+    .form-group select option {
+      background: var(--bg-dark);
+      color: var(--text-main);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Premium Custom Toggle Option Buttons */
+    .session-toggle-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .session-toggle-option {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition-main);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .session-toggle-option:hover,
+    .session-toggle-option.selected {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(197, 143, 151, 0.08);
+      box-shadow: 0 0 15px rgba(197, 143, 151, 0.15);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      padding: 1.15rem;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-main);
+      margin-top: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(197, 143, 151, 0.25);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(197, 143, 151, 0.45);
+    }
+
+    .hours-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      line-height: 1.8;
+    }
+
+    .hours-note strong {
+      color: var(--gold);
+    }
+
+    .success-msg {
+      display: none;
+      background: rgba(197, 143, 151, 0.08);
+      border: 1px solid var(--primary);
+      padding: 1.25rem;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-top: 1.5rem;
+      animation: fadeIn 0.5s ease;
+    }
+
+    /* Live Business Status Badge */
+    .business-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-left: 1rem;
+      vertical-align: middle;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .business-status-badge.open {
+      color: #7ccb97;
+      border-color: rgba(124, 203, 151, 0.2);
+    }
+
+    .business-status-badge.closed {
+      color: #e57373;
+      border-color: rgba(229, 115, 115, 0.2);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-dot.open {
+      background-color: #7ccb97;
+      box-shadow: 0 0 8px #7ccb97;
+      animation: pulse 2s infinite;
+    }
+
+    .status-dot.closed {
+      background-color: #e57373;
+      box-shadow: 0 0 8px #e57373;
+    }
+
+    /* Contact Page Upgrades */
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 8px;
+      transition: var(--transition-main);
+    }
+
+    .contact-info-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 25px rgba(223, 186, 107, 0.08);
+    }
+
+    .cic-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .cic-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .cic-value {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .cic-value a {
+      color: var(--primary);
+      transition: var(--transition-main);
+    }
+
+    .cic-value a:hover {
+      color: var(--gold);
+    }
+
+    .social-row {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .social-row {
+        flex-direction: column;
+      }
+    }
+
+    .social-btn {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      text-align: center;
+      border-radius: 8px;
+      transition: var(--transition-main);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .social-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 6px 15px rgba(197, 143, 151, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .map-placeholder {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-icon {
+      font-size: 2.5rem;
+      opacity: 0.4;
+      margin-bottom: 1.25rem;
+    }
+
+    .map-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      line-height: 1.8;
+      max-width: 450px;
+      margin: 0 auto;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+
+    .map-text strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Footer Upgrades */
+    footer {
+      background: #060405;
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-logo-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 0.85rem;
+      display: block;
+      box-shadow: 0 0 20px rgba(197, 143, 151, 0.15);
+    }
+
+    .footer-sub {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .footer-copy {
+      font-size: 0.65rem;
+      color: rgba(245, 242, 243, 0.15);
+      margin-top: 2rem;
+      letter-spacing: 1.5px;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes shimmer {
+      100% { left: 150%; }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(124, 203, 151, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(124, 203, 151, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(124, 203, 151, 0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="logo-icon-img">
+      <div>
+        <div class="logo-text">Nails by Shelby</div>
+        <div class="logo-sub">Mobile Nail Tech · Maseno</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('services')">Services</a></li>
+      <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="showPage('prices')">Prices</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+    <div>
+      <button class="nav-btn" onclick="showPage('booking')">Book Now</button>
+      <div class="burger-menu" onclick="toggleMobileMenu()">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-menu-overlay" id="mobileOverlay">
+    <ul class="mobile-menu-links">
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('services')">Services</a></li>
+      <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+      <li><a href="#" onclick="showPage('prices')">Prices</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="showPage('booking')">Book Now</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="active">
+    <div class="hero">
+      <div class="floating-tag tag1">✦ Gel Nails</div>
+      <div class="floating-tag tag2">✦ Stickons</div>
+      <div class="floating-tag tag3">✦ tips</div>
+      <div class="floating-tag tag4">✦ Mobile Tech</div>
+      
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="hero-logo">
+
+      <div class="hero-eyebrow">✦ Mobile Nail Tech ✦</div>
+      <h1 class="hero-title">Nails by<br><span>Shelby</span></h1>
+      <p class="hero-tagline">Maseno & Surrounding Areas · Handcrafted Beauty Delivered directly to your doorstep</p>
+      
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('booking')">Book Appointment</button>
+        <button class="btn-outline" onclick="showPage('services')">View Services</button>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Core Services</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Tue–Sun</div>
+          <div class="stat-label">Available Days</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Mobile</div>
+          <div class="stat-label">We Come To You</div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="page-header">
+      <div class="page-eyebrow">✦ What I Offer ✦</div>
+      <h2 class="page-title">My <span>Services</span></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Gel Nails</h3>
+          <div class="service-price">KES 300 <span>/ set</span></div>
+        </div>
+        <div class="service-duration"> 1 Hour</div>
+        <p class="service-desc">Glossy, long-lasting gel polish that keeps your nails looking fresh, shiny, and chip-free for weeks.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Stickons</h3>
+          <div class="service-price">KES 600 <span>/ set</span></div>
+        </div>
+        <div class="service-duration">2 Hours</div>
+        <p class="service-desc">Beautiful press-on nail sets. Plain price listed — custom nail art accents charged separately.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Tips (Plain)</h3>
+          <div class="service-price">KES 600 <span>/ set</span></div>
+        </div>
+        <div class="service-duration"> 2 Hours</div>
+        <p class="service-desc">Classic extension nail tips with a plain finish. Clean, structured, simple, and elegant.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Tips with Builder / Gumgel</h3>
+          <div class="service-price">KES 800 <span>/ set</span></div>
+        </div>
+        <div class="service-duration">⏱ 3 Hours</div>
+        <p class="service-desc">Premium extension nail tips reinforced with builder gel or gumgel overlay for max durability.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Builder on Natural Nails</h3>
+          <div class="service-price">KES 500 <span>/ set</span></div>
+        </div>
+        <div class="service-duration">⏱ 3 Hours</div>
+        <p class="service-desc">Strengthen and protect your own natural nails by overlaying structure builder gel directly on them.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-header">
+          <h3 class="service-name">Gumgel</h3>
+          <div class="service-price">KES 600 <span>/ set</span></div>
+        </div>
+        <div class="service-duration">⏱ 3 Hours</div>
+        <p class="service-desc">Flexible, light, and natural-feeling hybrid polygel overlays for a strong, flawless finish.</p>
+      </div>
+    </div>
+    
+    <div class="art-note">✦ Note: Nail art is charged separately based on your chosen design detail level. ✦</div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="page-header">
+      <div class="page-eyebrow">✦ My Portfolio ✦</div>
+      <h2 class="page-title">The <span>Gallery</span></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="gallery-grid">
+      <!-- Gallery Card 1 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/gel_nails.jpg', 'Gel Nails Set')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">Gel Nails</span>
+          </div>
+        </div>
+        <img src="assets/images/gel_nails.jpg" alt="Gel Nails" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">Gel Nails</h3>
+          <p class="gallery-desc">Glossy, elegant pastel nail coating</p>
+        </div>
+      </div>
+
+      <!-- Gallery Card 2 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/nail_art.jpg', 'Custom Nail Art Design')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">Nail Art</span>
+          </div>
+        </div>
+        <img src="assets/images/nail_art.jpg" alt="Nail Art" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">Nail Art</h3>
+          <p class="gallery-desc">Abstract swirls and gold-leaf details</p>
+        </div>
+      </div>
+
+      <!-- Gallery Card 3 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/stickons.jpg', 'Premium Stickons')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">Stickons</span>
+          </div>
+        </div>
+        <img src="assets/images/stickons.jpg" alt="Stickons" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">Premium Stickons</h3>
+          <p class="gallery-desc">Handcrafted custom shape press-ons</p>
+        </div>
+      </div>
+
+      <!-- Gallery Card 4 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/floral_art.jpg', '3D Floral Detail')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">3D Flowers</span>
+          </div>
+        </div>
+        <img src="assets/images/floral_art.jpg" alt="3D Floral Nail Art" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">3D Floral Art</h3>
+          <p class="gallery-desc">Handcrafted blooming floral details</p>
+        </div>
+      </div>
+
+      <!-- Gallery Card 5 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/gumgel.jpg', 'Gumgel Extension Set')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">Gumgel</span>
+          </div>
+        </div>
+        <img src="assets/images/gumgel.jpg" alt="Gumgel Extension" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">Gumgel Extensions</h3>
+          <p class="gallery-desc">Seamlessly blended strong extensions</p>
+        </div>
+      </div>
+
+      <!-- Gallery Card 6 -->
+      <div class="gallery-card" onclick="openLightbox('assets/images/chrome_french.jpg', 'Chrome French Tips')">
+        <div class="shimmer-placeholder">
+          <div class="shimmer-sweep"></div>
+          <div class="placeholder-content">
+            <svg class="placeholder-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span class="placeholder-text">Chrome Details</span>
+          </div>
+        </div>
+        <img src="assets/images/chrome_french.jpg" alt="Chrome French Tips" class="gallery-img" onload="this.classList.add('loaded')" onerror="this.style.opacity=0">
+        <div class="gallery-info">
+          <h3 class="gallery-title">Chrome French</h3>
+          <p class="gallery-desc">Mirror-shine glazed overlay</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-upload-note">📸 To display your nails here, send your high-resolution photos on WhatsApp!</div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- Lightbox Gallery Modal -->
+  <div class="lightbox" id="galleryLightbox">
+    <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Prices & Live Price Calculator Section -->
+  <section id="prices">
+    <div class="page-header">
+      <div class="page-eyebrow">
+        ✦ Transparent Rates ✦
+        <div class="business-status-badge open" id="live-status-badge">
+          <span class="status-dot open"></span>Checking...
+        </div>
+      </div>
+      <h2 class="page-title">Rates & <span>Calculator</span></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="prices-container">
+      <div class="prices-layout">
+        <!-- Static Price Lists -->
+        <div>
+          <div class="price-category">
+            <h3 class="price-cat-title">Nail Services</h3>
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Gel Nails</div>
+                <div class="price-item-detail">Glossy, chip-resistant finish</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 300</div>
+                <div class="price-duration">1 hour</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Stickons (Plain)</div>
+                <div class="price-item-detail">Press-on extension sets</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 600</div>
+                <div class="price-duration">2 hours</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Tips — Plain</div>
+                <div class="price-item-detail">Traditional tips, no builder overlays</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 600</div>
+                <div class="price-duration">2 hours</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Tips with Builder / Gumgel</div>
+                <div class="price-item-detail">Reinforced overlay extension sets</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 800</div>
+                <div class="price-duration">3 hours</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Builder on Natural Nails</div>
+                <div class="price-item-detail">Extra structural strength overlay</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 500</div>
+                <div class="price-duration">3 hours</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Gumgel</div>
+                <div class="price-item-detail">Flexible hybrid polygel overlays</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 600</div>
+                <div class="price-duration">3 hours</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="price-category">
+            <h3 class="price-cat-title">Nail Art Add-ons</h3>
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">French Tips</div>
+                <div class="price-item-detail">Classic luxury tips design</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 10</div>
+                <div class="per-finger">per finger</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Chrome Details</div>
+                <div class="price-item-detail">Metallic, reflective mirror glazes</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 25</div>
+                <div class="per-finger">per finger</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">Special Pigments</div>
+                <div class="price-item-detail">Multidimensional, shimmering custom powders</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 25</div>
+                <div class="per-finger">per finger</div>
+              </div>
+            </div>
+            
+            <div class="price-row">
+              <div>
+                <div class="price-item-name">3D Floral Accents</div>
+                <div class="price-item-detail">Individually sculpted gel details</div>
+              </div>
+              <div class="price-amount">
+                <div class="price-value">KES 50</div>
+                <div class="per-finger">per finger</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Estimate Calculator -->
+        <div class="calculator-card">
+          <h3 class="calc-title">
+            <span style="font-size:1.3rem;">✨</span> Price Calculator
+          </h3>
+          <div class="calc-group">
+            <label for="calc-base-service">Select Base Service</label>
+            <select id="calc-base-service" onchange="calculateTotalEstimate()">
+              <option value="0" data-service-name="None Selected">Choose a service...</option>
+              <option value="300" data-service-name="Gel Nails">Gel Nails — KES 300</option>
+              <option value="600" data-service-name="Stickons">Stickons (Plain) — KES 600</option>
+              <option value="600" data-service-name="Tips (Plain)">Tips (Plain) — KES 600</option>
+              <option value="800" data-service-name="Tips with Builder/Gumgel">Tips with Builder/Gumgel — KES 800</option>
+              <option value="500" data-service-name="Builder on Natural Nails">Builder on Natural Nails — KES 500</option>
+              <option value="600" data-service-name="Gumgel">Gumgel — KES 600</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <label>Nail Art Accents (select fingers)</label>
+            <div class="addon-rows">
+              <!-- French Tips -->
+              <div class="addon-item">
+                <div class="addon-details">
+                  French Tips <span>KES 10 / finger</span>
+                </div>
+                <div class="addon-qty">
+                  <button class="qty-btn" onclick="updateQty('french', -1)">-</button>
+                  <span class="qty-val" id="qty-french">0</span>
+                  <button class="qty-btn" onclick="updateQty('french', 1)">+</button>
+                </div>
+              </div>
+              
+              <!-- Chrome -->
+              <div class="addon-item">
+                <div class="addon-details">
+                  Chrome Finish <span>KES 25 / finger</span>
+                </div>
+                <div class="addon-qty">
+                  <button class="qty-btn" onclick="updateQty('chrome', -1)">-</button>
+                  <span class="qty-val" id="qty-chrome">0</span>
+                  <button class="qty-btn" onclick="updateQty('chrome', 1)">+</button>
+                </div>
+              </div>
+
+              <!-- Pigments -->
+              <div class="addon-item">
+                <div class="addon-details">
+                  Pigments <span>KES 25 / finger</span>
+                </div>
+                <div class="addon-qty">
+                  <button class="qty-btn" onclick="updateQty('pigment', -1)">-</button>
+                  <span class="qty-val" id="qty-pigment">0</span>
+                  <button class="qty-btn" onclick="updateQty('pigment', 1)">+</button>
+                </div>
+              </div>
+
+              <!-- 3D Flowers -->
+              <div class="addon-item">
+                <div class="addon-details">
+                  3D Floral <span>KES 50 / finger</span>
+                </div>
+                <div class="addon-qty">
+                  <button class="qty-btn" onclick="updateQty('flowers', -1)">-</button>
+                  <span class="qty-val" id="qty-flowers">0</span>
+                  <button class="qty-btn" onclick="updateQty('flowers', 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-total-box">
+            <span class="calc-total-label">Estimated Total</span>
+            <span class="calc-total-val" id="calc-total-display">KES 0</span>
+          </div>
+
+          <button class="calc-book-btn" onclick="bookWithEstimate()">Book With This Estimate</button>
+        </div>
+      </div>
+      
+      <div class="art-custom-note" style="margin-top: 3.5rem;">
+        <strong>Have a custom design inspiration?</strong> Art rates depend on complexity and detail. Send a photo of your inspiration via WhatsApp and Shelby will provide a customized quote! 💅
+      </div>
+    </div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking">
+    <div class="page-header">
+      <div class="page-eyebrow">✦ Secure Your Spot ✦</div>
+      <h2 class="page-title">Book <span>Appointment</span></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="booking-container">
+      <div class="contact-methods">
+        <div class="contact-method" onclick="openWhatsApp()">
+          <div class="cm-label">WhatsApp</div>
+          <div class="cm-value">0707 887 162</div>
+        </div>
+        <div class="contact-method" onclick="callNow()">
+          <div class="cm-label">Call Direct</div>
+          <div class="cm-value">0707 887 162</div>
+        </div>
+        <div class="contact-method">
+          <div class="cm-label">Form Request</div>
+          <div class="cm-value">Complete details below</div>
+        </div>
+      </div>
+      
+      <div class="form-divider">Or Send Online Details</div>
+      
+      <div class="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-name">Your Full Name</label>
+            <input type="text" id="b-name" placeholder="E.g. Jane Doe">
+          </div>
+          <div class="form-group">
+            <label for="b-phone">Phone Number</label>
+            <input type="tel" id="b-phone" placeholder="E.g. 0707887162">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="b-service">Service Required</label>
+          <select id="b-service">
+            <option value="">Choose a service...</option>
+            <option value="Gel Nails — KES 300">Gel Nails — KES 300</option>
+            <option value="Stickons (Plain) — KES 600">Stickons (Plain) — KES 600</option>
+            <option value="Tips (Plain) — KES 600">Tips (Plain) — KES 600</option>
+            <option value="Tips with Builder/Gumgel — KES 800">Tips with Builder/Gumgel — KES 800</option>
+            <option value="Builder on Natural Nails — KES 500">Builder on Natural Nails — KES 500</option>
+            <option value="Gumgel — KES 600">Gumgel — KES 600</option>
+            <option value="Custom Nail Art — Quote on request">Custom Nail Art — Quote on request</option>
+          </select>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-date">Preferred Date</label>
+            <input type="date" id="b-date" onclick="this.showPicker()" onfocus="this.showPicker()">
+          </div>
+          <div class="form-group">
+            <label for="b-time">Preferred Time</label>
+            <select id="b-time">
+              <option value="">Choose a time...</option>
+              <option value="6:00 AM">6:00 AM</option>
+              <option value="6:30 AM">6:30 AM</option>
+              <option value="7:00 AM">7:00 AM</option>
+              <option value="7:30 AM">7:30 AM</option>
+              <option value="8:00 AM">8:00 AM</option>
+              <option value="8:30 AM">8:30 AM</option>
+              <option value="9:00 AM">9:00 AM</option>
+              <option value="9:30 AM">9:30 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="10:30 AM">10:30 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="11:30 AM">11:30 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="12:30 PM">12:30 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="1:30 PM">1:30 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="2:30 PM">2:30 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="3:30 PM">3:30 PM</option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="4:30 PM">4:30 PM</option>
+              <option value="5:00 PM">5:00 PM</option>
+              <option value="5:30 PM">5:30 PM</option>
+              <option value="6:00 PM">6:00 PM</option>
+              <option value="6:30 PM">6:30 PM</option>
+              <option value="7:00 PM">7:00 PM</option>
+              <option value="7:30 PM">7:30 PM</option>
+              <option value="8:00 PM">8:00 PM</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="b-location">Your Location</label>
+          <input type="text" id="b-location" placeholder="E.g. Maseno Town, near main gate...">
+        </div>
+        
+        <div class="form-group">
+          <label>Session Type</label>
+          <div class="session-toggle-row">
+            <div class="session-toggle-option" id="opt-come" onclick="selectSessionType('come')">I come to your place</div>
+            <div class="session-toggle-option" id="opt-visit" onclick="selectSessionType('visit')">You come to me</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="b-notes">Additional Details / Nail Art Ideas</label>
+          <textarea id="b-notes" placeholder="E.g. Add 2 chrome fingers, abstract line art reference photo, etc."></textarea>
+        </div>
+        
+        <button class="submit-btn" onclick="submitForm()">Send Booking Request</button>
+        <div class="success-msg" id="success-msg">✦ Details composed! Redirecting to WhatsApp to send booking details... ✦</div>
+      </div>
+      
+      <div class="hours-note">
+        <strong>Working Hours:</strong> Tuesday – Sunday · 6:00 AM – 8:00 PM<br>
+        Closed on Mondays · Swift confirmations via WhatsApp
+      </div>
+    </div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="page-header">
+      <div class="page-eyebrow">✦ Drop A Message ✦</div>
+      <h2 class="page-title">Contact <span>Shelby</span></h2>
+      <div class="divider"></div>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <div class="cic-icon">📞</div>
+          <div class="cic-label">Phone & WhatsApp</div>
+          <div class="cic-value">
+            <a href="tel:+254707887162">0707 887 162</a>
+          </div>
+        </div>
+        
+        <div class="contact-info-card">
+          <div class="cic-icon">📍</div>
+          <div class="cic-label">Service Area</div>
+          <div class="cic-value">
+            Maseno & Surrounding Areas<br>Mobile nail services at your convenience
+          </div>
+        </div>
+        
+        <div class="contact-info-card">
+          <div class="cic-icon">🕐</div>
+          <div class="cic-label">Salon Working Hours</div>
+          <div class="cic-value">
+            Tue – Sun: 6:00 AM – 8:00 PM<br>Mondays: Closed
+          </div>
+        </div>
+        
+        <div class="contact-info-card">
+          <div class="cic-icon">💅</div>
+          <div class="cic-label">Mobile Convenience</div>
+          <div class="cic-value">
+            We travel to your home or hostel<br>Or host you at our Maseno location
+          </div>
+        </div>
+      </div>
+      
+      <div class="social-row">
+        <div class="social-btn" onclick="openWhatsApp()">💬 WhatsApp Direct</div>
+        <div class="social-btn" onclick="alert('Instagram profile launching soon!')">📸 Instagram (Soon)</div>
+        <div class="social-btn" onclick="alert('TikTok channel launching soon!')">🎵 TikTok (Soon)</div>
+      </div>
+      
+      <div class="map-placeholder">
+        <div class="map-icon">📍</div>
+        <div class="map-text">
+          <strong>Maseno, Kisumu County, Kenya</strong><br>
+          Serving students, staff, and residents in Maseno. We travel directly to your place!
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <img src="assets/images/logo.png" alt="Nails by Shelby Logo" class="footer-logo-img">
+      <div class="footer-sub">Mobile Nail Tech · Maseno, Kenya</div>
+      <div class="footer-copy">© 2026 Nails by Shelby · All rights reserved</div>
+    </footer>
+  </section>
+
+  <!-- JavaScript Logics -->
+  <script>
+    // Smooth Section Navigation
+    function showPage(id) {
+      const activeSection = document.querySelector('section.active');
+      const targetSection = document.getElementById(id);
+      
+      if (activeSection) {
+        activeSection.classList.remove('active');
+        activeSection.style.display = 'none';
+      }
+      
+      targetSection.style.display = 'block';
+      // Trigger browser reflow for CSS transition
+      targetSection.offsetHeight;
+      targetSection.classList.add('active');
+      
+      // Update nav link active styles
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.style.color = 'var(--text-muted)';
+      });
+      
+      // Handle mobile overlay closing
+      closeMobileMenu();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mobile Overlay Toggle
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileOverlay');
+      overlay.classList.toggle('active');
+      const burgerLines = document.querySelectorAll('.burger-line');
+      
+      if (overlay.classList.contains('active')) {
+        burgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        burgerLines[1].style.opacity = '0';
+        burgerLines[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+      } else {
+        burgerLines[0].style.transform = 'none';
+        burgerLines[1].style.opacity = '1';
+        burgerLines[2].style.transform = 'none';
+      }
+    }
+
+    function closeMobileMenu() {
+      const overlay = document.getElementById('mobileOverlay');
+      overlay.classList.remove('active');
+      document.querySelectorAll('.burger-line').forEach(line => line.style.transform = 'none');
+      document.querySelectorAll('.burger-line')[1].style.opacity = '1';
+    }
+
+    // Booking Session Selection Toggle
+    let selectedSessionTypeVal = 'come'; // default
+    
+    function selectSessionType(type) {
+      document.getElementById('opt-come').classList.remove('selected');
+      document.getElementById('opt-visit').classList.remove('selected');
+      
+      document.getElementById('opt-' + type).classList.add('selected');
+      selectedSessionTypeVal = type;
+    }
+
+    // Set initial toggle state on load
+    selectSessionType('come');
+
+    // Contact Utilities
+    function openWhatsApp() {
+      window.open('https://wa.me/254707887162?text=Hi%20Shelby!%20I%20would%20like%20to%20book%20a%20nail%20appointment.','_blank');
+    }
+
+    function callNow() {
+      window.open('tel:0707887162');
+    }
+
+    // Booking Form Submission
+    function submitForm() {
+      const name = document.getElementById('b-name').value.trim();
+      const phone = document.getElementById('b-phone').value.trim();
+      const service = document.getElementById('b-service').value;
+      
+      if (!name || !phone || !service) {
+        alert('Please provide your name, phone number, and service required.');
+        return;
+      }
+      
+      const date = document.getElementById('b-date').value;
+      const time = document.getElementById('b-time').value;
+      const location = document.getElementById('b-location').value.trim();
+      const notes = document.getElementById('b-notes').value.trim();
+      
+      const sessionTypeLabel = selectedSessionTypeVal === 'come' 
+        ? 'I come to your place' 
+        : 'You come to me';
+        
+      let msg = 'Hi Shelby! I would like to book a nail appointment.%0A%0A';
+      msg += '*Name:* ' + encodeURIComponent(name) + '%0A';
+      msg += '*Phone:* ' + encodeURIComponent(phone) + '%0A';
+      msg += '*Service:* ' + encodeURIComponent(service) + '%0A';
+      msg += '*Date:* ' + encodeURIComponent(date || 'Flexible') + '%0A';
+      msg += '*Time:* ' + encodeURIComponent(time || 'Flexible') + '%0A';
+      msg += '*Location:* ' + encodeURIComponent(location || 'To be discussed') + '%0A';
+      msg += '*Session:* ' + encodeURIComponent(sessionTypeLabel) + '%0A';
+      
+      if (notes) {
+        msg += '*Details:* ' + encodeURIComponent(notes);
+      }
+      
+      document.getElementById('success-msg').style.display = 'block';
+      setTimeout(() => {
+        window.open('https://wa.me/254707887162?text=' + msg, '_blank');
+      }, 1000);
+    }
+
+    // Set minimum booking date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('b-date').setAttribute('min', today);
+
+    // Business Status Checker (East Africa Time: UTC + 3)
+    function updateBusinessStatus() {
+      const now = new Date();
+      // UTC time
+      const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const eatOffset = 3; 
+      const eatTime = new Date(utcTime + (3600000 * eatOffset));
+      
+      const day = eatTime.getDay(); // 0 = Sunday, 1 = Monday, etc.
+      const hour = eatTime.getHours();
+      
+      let isOpen = false;
+      // Tue-Sun (day !== 1) & Hours: 6:00 AM (6) to 8:00 PM (20)
+      if (day !== 1 && hour >= 6 && hour < 20) {
+        isOpen = true;
+      }
+      
+      const badge = document.getElementById('live-status-badge');
+      if (isOpen) {
+        badge.innerHTML = '<span class="status-dot open"></span>Open Now';
+        badge.className = 'business-status-badge open';
+      } else {
+        badge.innerHTML = '<span class="status-dot closed"></span>Closed Now';
+        badge.className = 'business-status-badge closed';
+      }
+    }
+    
+    // Run status check on load
+    updateBusinessStatus();
+    setInterval(updateBusinessStatus, 60000); // refresh every minute
+
+    // Cost Calculator Logic
+    const artQuantities = {
+      french: 0,
+      chrome: 0,
+      pigment: 0,
+      flowers: 0
+    };
+    
+    const artPrices = {
+      french: 10,
+      chrome: 25,
+      pigment: 25,
+      flowers: 50
+    };
+
+    function updateQty(key, delta) {
+      const newVal = artQuantities[key] + delta;
+      if (newVal >= 0 && newVal <= 10) {
+        artQuantities[key] = newVal;
+        document.getElementById('qty-' + key).textContent = newVal;
+        calculateTotalEstimate();
+      }
+    }
+
+    function calculateTotalEstimate() {
+      const baseSelect = document.getElementById('calc-base-service');
+      const basePrice = parseInt(baseSelect.value);
+      
+      let artTotal = 0;
+      for (let key in artQuantities) {
+        artTotal += artQuantities[key] * artPrices[key];
+      }
+      
+      const grandTotal = basePrice + artTotal;
+      document.getElementById('calc-total-display').textContent = 'KES ' + grandTotal;
+      return grandTotal;
+    }
+
+    function bookWithEstimate() {
+      const baseSelect = document.getElementById('calc-base-service');
+      const basePrice = parseInt(baseSelect.value);
+      const serviceName = baseSelect.options[baseSelect.selectedIndex].getAttribute('data-service-name');
+      
+      if (basePrice === 0) {
+        alert('Please choose a base service in the price calculator before booking.');
+        return;
+      }
+      
+      // Auto-populate booking form details
+      const formServiceSelect = document.getElementById('b-service');
+      
+      // Find matching option in the booking form dropdown
+      for (let i = 0; i < formServiceSelect.options.length; i++) {
+        if (formServiceSelect.options[i].text.includes(serviceName)) {
+          formServiceSelect.selectedIndex = i;
+          break;
+        }
+      }
+      
+      // Generate pre-filled notes about design accents
+      let notes = 'Booking with price calculator estimate:\n';
+      notes += '- Base Service: ' + serviceName + ' (KES ' + basePrice + ')\n';
+      
+      let addedArt = false;
+      if (artQuantities.french > 0) { notes += '- French Tips: ' + artQuantities.french + ' fingers\n'; addedArt = true; }
+      if (artQuantities.chrome > 0) { notes += '- Chrome Finish: ' + artQuantities.chrome + ' fingers\n'; addedArt = true; }
+      if (artQuantities.pigment > 0) { notes += '- Pigments: ' + artQuantities.pigment + ' fingers\n'; addedArt = true; }
+      if (artQuantities.flowers > 0) { notes += '- 3D Flowers: ' + artQuantities.flowers + ' fingers\n'; addedArt = true; }
+      
+      if (!addedArt) {
+        notes += '- No nail art accents selected.';
+      }
+      
+      notes += '\nEstimated Total: KES ' + calculateTotalEstimate();
+      document.getElementById('b-notes').value = notes;
+      
+      // Switch page to booking
+      showPage('booking');
+    }
+
+    // Lightbox modal operations
+    function openLightbox(src, caption) {
+      // If image failed to load, don't open lightbox
+      const cards = document.querySelectorAll('.gallery-card');
+      let clickedCardImage = null;
+      cards.forEach(card => {
+        if (card.getAttribute('onclick').includes(src)) {
+          clickedCardImage = card.querySelector('.gallery-img');
+        }
+      });
+      
+      if (clickedCardImage && clickedCardImage.style.opacity === '0') {
+        alert('Gallery image file "' + src + '" has not been uploaded yet. Click on WhatsApp to send Shelby your nail photos!');
+        return;
+      }
+      
+      const lightbox = document.getElementById('galleryLightbox');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      
+      img.src = src;
+      cap.textContent = caption;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('galleryLightbox');
+      lightbox.classList.remove('active');
+    }
+
+    // Close lightbox on clicking dark overlay background
+    document.getElementById('galleryLightbox').addEventListener('click', function(e) {
+      if (e.target.id === 'galleryLightbox') {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
