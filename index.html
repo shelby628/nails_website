@@ -1205,6 +1205,20 @@
       resize: vertical;
       min-height: 100px;
     }
+    .mobile-menu-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 2.2rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-main);
+      line-height: 1;
+    }
+
+    .mobile-menu-close:hover {
+      color: var(--primary);
+    }
 
     /* Premium Custom Toggle Option Buttons */
     .session-toggle-row {
@@ -1564,10 +1578,13 @@
       </div>
     </div>
   </nav>
+  
 
   <!-- Mobile Overlay Navigation -->
   <div class="mobile-menu-overlay" id="mobileOverlay">
+    <div class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</div>
     <ul class="mobile-menu-links">
+
       <li><a href="#" onclick="showPage('home')">Home</a></li>
       <li><a href="#" onclick="showPage('services')">Services</a></li>
       <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
@@ -1575,7 +1592,6 @@
       <li><a href="#" onclick="showPage('contact')">Contact</a></li>
     </ul>
     <button class="mobile-menu-btn" onclick="showPage('booking')">Book Now</button>
-    <button class="theme-toggle-btn" onclick="toggleTheme()" style="margin-top:1rem;">🌙 / ☀️ Toggle Theme</button>
   </div>
 
   <!-- Hero Section -->
